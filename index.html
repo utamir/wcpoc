@@ -1,0 +1,27 @@
+<html>
+<head>
+
+</head>
+<body>
+<script src="http://wx.gtimg.com/wxpay_h5/fingerprint2.min.1.4.1.js"></script>
+ <script type="text/javascript" src="http://wxpay.wxutil.com/css/zepto.min.js"></script>
+    <script type="text/javascript">
+                var fp=new Fingerprint2();
+                fp.get(function(result)
+{
+//$.getJSON("https://hook.io/utamir/test", function(d) {alert(d)});
+$.getJSON("http://wxpay.wxutil.com/mch/pay/h5.json.php?code="+result, function(d){
+    if(d.errmsg == ''){
+        //$('#getBrandWCPayRequest').attr("href",d.url);//+'&redirect_url=http%3a%2f%2fwxpay.    wxutil.com%2fmch%2fpay%2fh5jumppage.php
+        Window.location = d.url
+     }else{
+      alert(d.errmsg);
+                                
+}
+            
+});                                                            
+}
+                  );
+</script>
+</body>
+</html>
