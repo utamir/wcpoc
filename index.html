@@ -6,23 +6,24 @@
 <script src="https://wx.gtimg.com/wxpay_h5/fingerprint2.min.1.4.1.js"></script>
  <script type="text/javascript" src="zepto.min.js.inc"></script>
     <script type="text/javascript">
-                var fp=new Fingerprint2();
-                fp.get(function(result)
-{
+ //               var fp=new Fingerprint2();
+ //               fp.get(function(result)
+//{
 //$.getJSON("https://hook.io/utamir/test", function(d) {alert(d)});
                  //http://wxpay.wxutil.com/mch/pay/h5.json.php?code=
-$.getJSON("https://hook.io/utamir/test?code="+result, function(d){
+//$.getJSON("https://hook.io/utamir/test?code="+result, function(d){
+$.getJSON("https://hook.io/utamir/wcpay?price=1000", function(d){
     if(d.errmsg == ''){
         //$('#getBrandWCPayRequest').attr("href",d.url);//+'&redirect_url=http%3a%2f%2fwxpay.    wxutil.com%2fmch%2fpay%2fh5jumppage.php
-     window.location.href = d.url;
+     window.location.href = d.code_url;
      }else{
       alert(d.errmsg);
                                 
 }
             
 });                                                            
-}
-                  );
+//}
+//                  );
 </script>
 </body>
 </html>
